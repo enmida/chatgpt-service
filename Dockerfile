@@ -7,8 +7,6 @@ WORKDIR /app
 
 COPY /service/package.json /app
 
-COPY /service/pnpm-lock.yaml /app
-
 RUN pnpm install
 
 COPY /service /app
