@@ -82,6 +82,15 @@ router.post('/verify', async (req, res) => {
   }
 })
 
+router.get('/check', async (req, res) => {
+  try {
+    res.send({ status: 'Success', message: 'Check successfully', data: null })
+  }
+  catch (error) {
+    res.send({ status: 'Fail', message: error.message, data: null })
+  }
+})
+
 app.use('', router)
 app.use('/api', router)
 app.set('trust proxy', 1)
